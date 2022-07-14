@@ -41,7 +41,7 @@ function runRolls() {
     else if (!adv_b && !luck_b && !eAcc_b) {   // Roll 1 dice if all are false
       let rollCheck = Math.floor(Math.random() * sides) + 1
       results[rollCheck] = results[rollCheck] + 1
-      console.log("all off")
+//       console.log("all off")
     }
     else if (adv_b && eAcc_b && !luck_b) {   // Roll 2 dice if and and eAcc_b true but no luck
       let rollCheck = Math.max(
