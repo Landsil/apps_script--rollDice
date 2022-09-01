@@ -1,4 +1,4 @@
-function runRolls() {
+function skillCheck() {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet()
   var roll = spreadsheet.getSheetByName("roll");
 
@@ -12,6 +12,8 @@ function runRolls() {
   let luck_b = (luck == 'true')
   let eAcc = roll.getRange("F2").getValues();
   let eAcc_b = (eAcc == 'true')
+  let dis = roll.getRange("G2").getValues();
+  let dis_b = (dis == 'true')
 
   let orMore = 1
   let sum = 0
@@ -38,12 +40,12 @@ function runRolls() {
       results[rollCheck] = results[rollCheck] + 1
       // console.log("adv and luck but no eAcc")
     }
-    else if (!adv_b && !luck_b && !eAcc_b) {   // Roll 1 dice if all are false
+    else if (!adv_b && !luck_b && !eAcc_b && !dis_b) {   // Roll 1 dice if all are false
       let rollCheck = Math.floor(Math.random() * sides) + 1
       results[rollCheck] = results[rollCheck] + 1
-//       console.log("all off")
+      // console.log("all off")
     }
-    else if (adv_b && eAcc_b && !luck_b) {   // Roll 2 dice if and and eAcc_b true but no luck
+    else if (adv_b && eAcc_b && !luck_b) {   // Roll 2 dice if adv_b and eAcc_b true but no luck
       let rollCheck = Math.max(
         Math.floor(Math.random() * sides) + 1,
         Math.floor(Math.random() * sides) + 1)
@@ -54,9 +56,12 @@ function runRolls() {
       let rollCheck_adv = Math.max(Math.floor(Math.random() * sides) + 1, Math.floor(Math.random() * sides) + 1)
       results[rollCheck_adv] = results[rollCheck_adv] + 1
       // console.log("adv or luck but no eAcc")
+    } else if (dis_b) {
+      let rollCheck_dis = Math.min(Math.floor(Math.random() * sides) + 1, Math.floor(Math.random() * sides) + 1)
+      results[rollCheck_dis] = results[rollCheck_dis] + 1
     }
-  };
 
+  };
 
   for (let r = 1; r < 21; r++) {
     sum = sum + (r * results[r])
@@ -70,5 +75,4 @@ function runRolls() {
   n_row = (+needed) + 7
   roll.getRange("A" + n_row).setBackground("#FDFF81")
   roll.getRange("D" + n_row).setBackground("#50FF3F")
-
 };
