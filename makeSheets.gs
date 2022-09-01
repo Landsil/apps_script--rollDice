@@ -19,9 +19,12 @@ function make_sheets() {
   roll.getRange("E2").setDataValidation(SpreadsheetApp.newDataValidation().requireCheckbox());
   roll.getRange("F1").setValue("Elven Accuracy").setHorizontalAlignment("center").setFontWeight("bold");
   roll.getRange("F2").setDataValidation(SpreadsheetApp.newDataValidation().requireCheckbox());
+  roll.getRange("G1").setValue("Disadvantage").setHorizontalAlignment("center").setFontWeight("bold");
+  roll.getRange("G2").setDataValidation(SpreadsheetApp.newDataValidation().requireCheckbox());
+
 
   roll.getRange("A4").setValue("Average").setHorizontalAlignment("center").setFontWeight("bold");
-  roll.getRange("A2").setValue("Needed").setHorizontalAlignment("center").setFontWeight("bold");
+  roll.getRange("A2").setValue("DC").setHorizontalAlignment("center").setFontWeight("bold");
   roll.getRange("B2").setHorizontalAlignment("center").setFontWeight("bold").setBackground("grey");
 
   roll.setColumnWidth(1, 80);
