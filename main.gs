@@ -11,8 +11,8 @@ function onOpen() {
     functionName : 'make_sheets'
   },
   {
-    name : 'Roll',
-    functionName : 'runRolls'
+    name : 'Roll 20',
+    functionName : 'skillCheck'
   },
                 ];
   sheet.addMenu('Roll Master', entries);
