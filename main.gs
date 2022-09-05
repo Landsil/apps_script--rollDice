@@ -14,6 +14,10 @@ function onOpen() {
     name : 'Roll 20',
     functionName : 'skillCheck'
   },
+    {
+    name : 'Roll DMG',
+    functionName : 'dmgCheck'
+  },
                 ];
   sheet.addMenu('Roll Master', entries);
 }
