@@ -3,6 +3,8 @@ Brute force dice roll statistics for Dungeons and Dragons 5e by rolling a millio
 
 
 ## Setup
+If you've been given a link a sheet with it you can just copy it and skip to point 5
+
 1. Go to new sheet at sheets.new
 2. Menu bar go to "Extentions" > "Apps Script"
 3. Make 3 files with those names and copy code into them
@@ -11,4 +13,5 @@ Brute force dice roll statistics for Dungeons and Dragons 5e by rolling a millio
 
 ## Usage
 1. "Make the sheet" will make a tempalte for you to interact with
-2. "Roll" will roll specified dice (d20) a milion times with specified options
+2. "Roll 20" will roll specified dice (d20) a milion times with specified options
+3. "Roll DMG" will roll specified smaller die a milion times and produce chance to a target result.
