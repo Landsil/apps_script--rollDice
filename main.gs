@@ -1,5 +1,7 @@
 /**
+Up to date version at: https://github.com/Landsil/apps_script--rollDice/tree/main
 Interfaces and other things
+
 */
 
 
